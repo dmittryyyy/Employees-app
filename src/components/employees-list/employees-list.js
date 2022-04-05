@@ -3,6 +3,7 @@ import EmployeesListItem from '../employees-list-item/employees-list-item';
 
 
 const EmployeesList = ({ data, onDelete, onToggleProp }) => {
+    
     const elements = data.map(item => {
         const {id, ...itemProps} = item;
         return (

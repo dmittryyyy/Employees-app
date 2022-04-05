@@ -5,3 +5,8 @@
     box-shadow: 15px 15px 30p rgba(0, 0, blue0, .15);
     color: #fff;
 }
+
+.subTitle {
+    color: rgb(222, 218, 218);
+    font-size: 15px;
+}

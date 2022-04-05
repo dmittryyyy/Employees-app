@@ -7,24 +7,24 @@ class EmployeesAddForm extends Component {
         super(props);
         this.state = {
            name: '',
-           salary: '' 
+           salary: '',
         }
     }
 
     onValueChanges = (e) => {
         this.setState({
-           [e.target.name] : e.target.value //скобки для записи составного св-ва в объект
+           [e.target.name] : e.target.value, //скобки для записи составного св-ва в объект
+           [e.target.salary] : e.target.value
         })
     }
 
     onSubmit = (e) => {
         e.preventDefault();
-        if(this.state.name.length < 3 || !this.state.salary) {
-            return
-        } else {
 
-        } 
-        
+        if(this.state.salary.length < 3 || this.state.name.length < 4) {
+            return
+        }
+
         this.props.onAdd(this.state.name, this.state.salary);
         this.setState({
             name: '',
@@ -33,7 +33,7 @@ class EmployeesAddForm extends Component {
     }
 
     render() {
-        const { name, salary } = this.state;
+        const { name, salary } = this.props;
 
         return (
             <div className="app-add-form">
